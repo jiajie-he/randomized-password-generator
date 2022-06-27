@@ -32,8 +32,6 @@ function generatePassword() {
   // for loop
   // add random character
 
-//  var possPassword = `1234567890qwertyuiopasdfghjklzxcvbnmMNBVCXZLKJHGFDSAPOIUYTREWQ!@#$%^&*()`
-
   for (let i = 0; i < passwordLength; i++) {
     //add random character to password
     password += availableCharacters.charAt(Math.floor(Math.random()*availableCharacters.length));
@@ -52,14 +50,14 @@ function getParameters() {
   passwordLength = prompt(`Please enter desired password length`)
   if (!passwordLength) {
     return ``;
-  } 
-  if (passwordLength<8) {
+  } else if (passwordLength<8) {
     alert(`minimum 8 characters required`);
     return getParameters();
-  } if (passwordLength>128) {
+  } else if (passwordLength>128) {
     alert(`use 128 characters or fewer for your password`);
     return getParameters();
-  }
+  } ;
+
   // // confirm -> yes/no -> add characters to availableCharacters
   var possNum = `1234567890`
   var possLower = `qwertyuiopasdfghjklzxcvbnm`
