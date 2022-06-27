@@ -14,10 +14,10 @@ The password generator successfully presents a series of prompts for password cr
 
 
 
-* conditional
-* if statment
+* if statment and recursion
 * Check user input
 * Set length minimum and maximum
+* Rerun function
 
 
 

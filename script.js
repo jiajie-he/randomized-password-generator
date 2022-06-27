@@ -1,6 +1,10 @@
-// global variable
+// global variables
 var passwordLength;
 var availableCharacters = ``;
+var numChar = `1234567890`;
+var lowerChar = `qwertyuiopasdfghjklzxcvbnm`;
+var upperChar = `MNBVCXZLKJHGFDSAPOIUYTREWQ`;
+var specialChar = `!\"#$%&\'()*+,-./:;<=>?@[\]^_\`{|}~`;
 
 
 
@@ -34,7 +38,7 @@ function generatePassword() {
 
   for (let i = 0; i < passwordLength; i++) {
     //add random character to password
-    password += availableCharacters.charAt(Math.floor(Math.random()*availableCharacters.length));
+    password += availableCharacters[Math.floor(Math.random()*availableCharacters.length)];
 
   }
 
@@ -59,21 +63,21 @@ function getParameters() {
   } ;
 
   // // confirm -> yes/no -> add characters to availableCharacters
-  var possNum = `1234567890`
-  var possLower = `qwertyuiopasdfghjklzxcvbnm`
-  var possUpper = `MNBVCXZLKJHGFDSAPOIUYTREWQ`
-  var possSpecial = `!\"#$%&\'()*+,-./:;<=>?@[\]^_\`{|}~`
+
+
+  // building string of possible char
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
   if (confirm(`click ok to include numbers`) == true) {
-    availableCharacters = availableCharacters.concat(possNum)
+    availableCharacters = availableCharacters.concat(numChar)
   }  
   if (confirm(`click ok to include lowercase letter`) == true) {
-    availableCharacters = availableCharacters.concat(possLower)
+    availableCharacters = availableCharacters.concat(lowerChar)
   } 
   if (confirm(`click ok to include uppercase letters`) == true) {
-    availableCharacters = availableCharacters.concat(possUpper)
+    availableCharacters = availableCharacters.concat(upperChar)
   }  
   if (confirm(`click ok to include special characters`) == true) {
-    availableCharacters = availableCharacters.concat(possSpecial)
+    availableCharacters = availableCharacters.concat(specialChar)
   } 
   if (availableCharacters == false) {
     alert(`minimum one option required`)
